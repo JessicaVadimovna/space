@@ -1,0 +1,903 @@
+body {
+    margin: 0;
+    font-family: 'OCR-A', monospace;
+    background: #1A1A1A;
+    color: #39FF14;
+    overflow-x: hidden;
+}
+
+.space-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, #0A0A2A 0%, #1A1A1A 70%);
+    z-index: -2;
+}
+
+.stars-layer1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxjaXJjbGUgY3g9IjUwJSIgY3k9IjUwJSIgcj0iMSIgZmlsbD0iI2ZmZiIvPjxjaXJjbGUgY3g9IjIwJSIgY3k9IjMwJSIgcj0iMC41IiBmaWxsPSIjZmZmIi8+PGNpcmNsZSBjeD0iODAlIiBjeT0iNzAlIiByPSIxLjUiIGZpbGw9IiNmZmYiLz48L3N2Zz4=') repeat;
+    animation: twinkle 3s infinite;
+    z-index: -1;
+}
+
+.stars-layer2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxjaXJjbGUgY3g9IjMwJSIgY3k9IjQwJSIgcj0iMC43IiBmaWxsPSIjZmZmIi8+PGNpcmNsZSBjeD0iNzAlIiBjeT0iMjAlIiByPSIxIiBmaWxsPSIjZmZmIi8+PGNpcmNsZSBjeD0iMTAlIiBjeT0iODAlIiByPSIwLjgiIGZpbGw9IiNmZmYiLz48L3N2Zz4=') repeat;
+    animation: twinkle 5s infinite;
+    z-index: -1;
+}
+
+.nebula {
+    position: fixed;
+    top: 20%;
+    left: 10%;
+    width: 300px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(57, 255, 20, 0.3), transparent);
+    filter: blur(50px);
+    animation: pulse 10s infinite;
+    z-index: -1;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.2); }
+}
+
+.meteor {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 20px #fff;
+    z-index: 0;
+}
+
+#meteor1 { animation: meteor-fall 4s infinite linear; }
+#meteor2 { animation: meteor-fall 6s infinite linear 2s; }
+
+@keyframes meteor-fall {
+    0% { top: -20px; left: calc(10% + (random(80) * 1%)); transform: rotate(45deg) scale(1); }
+    100% { top: 100%; left: calc(10% + (random(80) * 1%) + 200px); transform: rotate(45deg) scale(0.5); opacity: 0; }
+}
+
+
+.black-hole {
+    position: fixed;
+    top: 70%;
+    right: 10%;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, #000 20%, #1a0a2a 50%, transparent 80%); /* Чёрный → тёмно-фиолетовый */
+    box-shadow: 0 0 50px rgba(26, 10, 42, 0.9); /* Тёмная тень */
+    z-index: 10;
+    border-radius: 50%;
+    animation: swirl 20s infinite linear;
+    overflow: visible;
+}
+
+/* Аккреционный диск с реалистичными цветами */
+.black-hole::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 40px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 165, 0, 0.6) 20%, /* Оранжевый */
+        rgba(255, 69, 0, 0.8) 50%, /* Красный */
+        rgba(139, 0, 0, 0.5) 80%, /* Тёмно-красный */
+        transparent
+    );
+    transform: translate(-50%, -50%) rotate(45deg);
+    border-radius: 50%;
+    animation: disk-spin 4s infinite linear;
+    filter: blur(10px) brightness(1.3); /* Свечение */
+    z-index: 9;
+    opacity: 0.9;
+}
+
+/* Световое кольцо */
+.black-hole::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    border: 2px solid rgba(255, 165, 0, 0.2); /* Оранжевое кольцо */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: ring-pulse 10s infinite ease-in-out;
+    filter: blur(4px);
+    z-index: 8;
+}
+
+@keyframes swirl {
+    0% { transform: rotate(0deg) scale(1); }
+    100% { transform: rotate(360deg) scale(1.05); }
+}
+
+@keyframes disk-spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
+    100% { transform: translate(-50%, -50%) rotate(360deg) scale(1.1); }
+}
+
+@keyframes ring-pulse {
+    0% { opacity: 0.2; transform: translate(-50%, -50%) scale(1); }
+    50% { opacity: 0.5; transform: translate(-50%, -50%) scale(1.15); }
+    100% { opacity: 0.2; transform: translate(-50%, -50%) scale(1); }
+}
+
+/* Локальное искривление для .alien-saucer */
+.alien-saucer {
+    position: fixed;
+    width: 80px;
+    height: 40px;
+    background: url('/delorean.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: saucer-flight 25s infinite ease-in-out;
+    z-index: 0;
+    transition: transform 0.3s ease, filter 0.3s ease; /* Плавное искажение */
+}
+
+/* Искажение при приближении к чёрной дыре */
+.black-hole:hover ~ .alien-saucer {
+    transform: skewX(10deg) scale(0.9); /* Искажение формы */
+    filter: blur(2px) contrast(1.3); /* Лёгкое размытие и контраст */
+}
+
+/* Курсор с эффектом всасывания */
+.cursor-distort {
+    position: fixed;
+    width: 25px;
+    height: 25px;
+    background: radial-gradient(circle, rgba(255, 165, 0, 0.7), transparent); /* Оранжевый */
+    border-radius: 50%;
+    z-index: 1001;
+    pointer-events: none;
+    animation: suck-in 0.5s infinite alternate;
+    filter: blur(3px);
+}
+
+.cursor-trail {
+    position: fixed;
+    width: 15px;
+    height: 15px;
+    background: rgba(255, 165, 0, 0.4);
+    border-radius: 50%;
+    z-index: 1000;
+    pointer-events: none;
+    animation: fade-out 0.5s forwards;
+}
+
+@keyframes suck-in {
+    0% { transform: scale(1) translate(0, 0); }
+    100% { transform: scale(0.5) translate(-10px, 10px); } /* "Всасывание" к дыре */
+}
+
+@keyframes fade-out {
+    0% { opacity: 0.4; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.5); }
+}
+
+
+.alien-saucer {
+    position: fixed;
+    width: 80px;
+    height: 40px;
+    background: url('/delorean.png'); /* Укажи имя своего файла */
+    background-size: contain; /* Чтобы изображение помещалось в размеры */
+    background-repeat: no-repeat; /* Предотвращает повторение */
+    animation: saucer-flight 25s infinite ease-in-out;
+    z-index: 0;
+}
+
+@keyframes saucer-flight {
+    0% {
+        top: 10%;
+        left: -150px; /* Ещё дальше за левый край */
+        transform: scaleX(1);
+    }
+    10% {
+        top: 10%;
+        left: 0;
+        transform: scaleX(1);
+    }
+    40% {
+        top: 50%;
+        left: calc(100% + 150px); /* Ещё дальше за правый край */
+        transform: scaleX(1);
+    }
+    50% {
+        top: 50%;
+        left: calc(100% + 200px); /* Максимально далеко */
+        transform: scaleX(0);
+    }
+    60% {
+        top: 50%;
+        left: calc(100% + 150px);
+        transform: scaleX(-1);
+    }
+    90% {
+        top: 10%;
+        left: 0;
+        transform: scaleX(-1);
+    }
+    100% {
+        top: 10%;
+        left: -150px; /* Ещё дальше за левый край */
+        transform: scaleX(-1);
+    }
+}
+
+.crt-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAFElEQVQImWNgYGD4z8DAwMDI4AEAJtwB8xW8lQAAAABJRU5ErkJggg==');
+    opacity: 0.15;
+    z-index: 999;
+    pointer-events: none; /* Добавлено, чтобы не перехватывал клики */
+}
+
+.steam {
+    position: fixed;
+    bottom: 0;
+    width: 50%;
+    height: 150px;
+    background: linear-gradient(transparent, rgba(255, 255, 255, 0.3));
+    animation: steam-rise 4s infinite;
+}
+
+.steam1 { left: 0; }
+.steam2 { right: 0; animation-delay: 2s; }
+
+@keyframes steam-rise {
+    0% { transform: translateY(0); opacity: 0.3; }
+    100% { transform: translateY(-300px); opacity: 0; }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+}
+
+/* Космический корабль */
+.spaceship {
+    position: fixed;
+    width: 100px;
+    height: 50px;
+    background: url('/sputnik.png'); /* Укажи имя своего файла */
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: fly 20s infinite linear;
+    z-index: 998;
+}
+
+@keyframes fly {
+    0% {
+        transform: translate(-1400px, 50px) rotate(0deg) scale(1); /* Начинается далеко за левым краем */
+    }
+    50% {
+        transform: translate(575px, 50px) rotate(180deg) scale(1.1); /* Мягкое увеличение в середине */
+    }
+    100% {
+        transform: translate(1700px, 50px) rotate(360deg) scale(1); /* Уходит далеко за правый край */
+        opacity: 0;
+    }
+}
+
+/* Глитч-эффект */
+/* Существующий стиль для .glitch */
+.glitch {
+    position: relative;
+    animation: glitch 2s linear infinite;
+  }
+  
+  .glitch::before,
+  .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: #B87333;
+  }
+  
+  .glitch::before {
+    animation: glitch-top 1s linear infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+  }
+  
+  .glitch::after {
+    animation: glitch-bottom 1.5s linear infinite;
+    clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+  }
+  
+  @keyframes glitch {
+    2%, 64% { transform: translate(2px, 0) skew(0deg); }
+    4%, 60% { transform: translate(-2px, 0) skew(0deg); }
+    62% { transform: translate(0, 0) skew(5deg); }
+  }
+  
+  @keyframes glitch-top {
+    2%, 64% { transform: translate(2px, -2px); }
+    4%, 60% { transform: translate(-2px, 2px); }
+    62% { transform: translate(13px, -1px) skew(-13deg); }
+  }
+  
+  @keyframes glitch-bottom {
+    2%, 64% { transform: translate(-2px, 0); }
+    4%, 60% { transform: translate(-2px, 0); }
+    62% { transform: translate(-22px, 5px) skew(21deg); }
+  }
+  
+  /* Добавляем стили для переноса строк */
+  .launch-panel h1 {
+    display: flex;
+    flex-direction: column; /* Каждый span на новой строке */
+    align-items: center; /* Центрируем текст */
+    gap: 10px; /* Расстояние между строками */
+  }
+  
+  .launch-panel h1 .glitch {
+    font-size: 1em; /* Размер текста */
+    color: #39FF14; /* Основной цвет текста */
+    text-shadow: 0 0 10px #39FF14; /* Неоновое свечение */
+  }
+
+/* Главная страница */
+.launch-panel {
+    text-align: center;
+}
+
+.screen {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 4px solid #B87333;
+    background: #000;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 0 15px #39FF14;
+}
+
+#threejs-canvas {
+    width: 100%;
+    height: 200px;
+}
+
+.screen:hover::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: #fff;
+    animation: sparks 0.5s infinite;
+}
+
+@keyframes sparks {
+    0% { top: 50%; left: 50%; }
+    100% { top: calc(50% + (random(100) * 1%)); left: calc(50% + (random(100) * 1%)); opacity: 0; }
+}
+
+.code-lines {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #39FF14;
+    font-size: 0.8em;
+    white-space: pre;
+    text-shadow: 0 0 5px #39FF14;
+}
+
+/* Котики */
+.space-cat {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: url('/heart.png'); /* Укажи имя своего файла */
+    background-size: contain; /* Чтобы изображение помещалось в размеры */
+    background-repeat: no-repeat; /* Предотвращает повторение */
+    animation: float 6s infinite ease-in-out;
+}
+
+#cat1 { top: 10px; right: 20px; }
+#cat2 { bottom: 10px; left: 20px; }
+#cat3 { top: 50px; right: 50px; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Обо мне */
+.about {
+    margin: 40px 0;
+    padding: 20px;
+    border: 2px solid #B87333;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.pilot-card {
+    position: relative;
+    text-align: center;
+}
+
+.heart {
+    width: 150px;
+}
+
+.scan-line {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 3px;
+    background: #39FF14;
+    animation: scan 1.5s infinite;
+}
+
+@keyframes scan {
+    0% { top: 0; }
+    50% { top: 100%; }
+    100% { top: 0; }
+}
+
+.glitch-avatar {
+    border: 2px solid #B87333;
+    border-radius: 50%;
+    animation: glitch-avatar 3s infinite;
+    width: 150px;
+}
+
+@keyframes glitch-avatar {
+    2% { clip-path: polygon(0 0, 100% 0, 100% 5%, 0 5%); transform: translate(2px, -2px); }
+    4% { clip-path: polygon(0 95%, 100% 95%, 100% 100%, 0 100%); transform: translate(-2px, 2px); }
+    6%, 100% { clip-path: none; transform: translate(0, 0); }
+}
+
+
+.data-btn {
+    padding: 10px 20px;
+    background: #B87333;
+    border: none;
+    color: #1A1A1A;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.data-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px #39FF14;
+}
+
+.data-panel {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    background: #000;
+    border: 1px solid #39FF14;
+    position: relative;
+    animation: slide-in 0.5s forwards;
+}
+
+/* Анимация появления (справа налево) */
+@keyframes slide-in {
+    0% { transform: translateX(100%); } /* Начинается справа */
+    100% { transform: translateX(0); } /* Перемещается в видимую зону */
+}
+
+/* Анимация исчезания (слева направо) */
+@keyframes slide-out {
+    0% { transform: translateX(0); } /* Начинается в видимой зоне */
+    100% { transform: translateX(200%); } /* Уезжает налево */
+}
+
+
+.steam-effect {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: steam-rise 2s infinite;
+}
+
+@keyframes slide-in {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(0); }
+}
+
+/* Навыки */
+.control-panel {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.skill-lever {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skill-lever input[type="range"] {
+    appearance: none;
+    width: 120px;
+    height: 15px;
+    background: #B87333;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #8B0000;
+}
+
+.skill-lever input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #39FF14;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 10px #39FF14;
+}
+
+.skill-sphere {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(#39FF14, #1A1A1A);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: rotate 4s infinite linear;
+    box-shadow: 0 0 15px #39FF14;
+}
+
+.skill-button {
+    width: 100px;
+    height: 100px;
+    background: #B87333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.skill-button::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #000;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+.skill-button:hover::after {
+    background: #39FF14;
+    box-shadow: 0 0 10px #39FF14;
+}
+
+.tech-card {
+    display: none;
+    position: absolute;
+    padding: 15px;
+    background: #000;
+    border: 1px solid #39FF14;
+    box-shadow: 0 0 10px #39FF14;
+    animation: puff 0.5s forwards;
+}
+
+@keyframes puff {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Опыт работы */
+.experience {
+    margin: 40px 0;
+    padding: 20px;
+    border: 2px solid #B87333;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.exp-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.exp-item {
+    padding: 15px;
+    background: #000;
+    border: 1px solid #39FF14;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.exp-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px #39FF14;
+}
+
+/* Портфолио */
+.orbit {
+    position: relative;
+    height: 400px;
+}
+
+#portfolio-canvas {
+    width: 100%;
+    height: 100%;
+}
+
+.project-details {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #000;
+    padding: 20px;
+    border: 1px solid #39FF14;
+    box-shadow: 0 0 15px #39FF14;
+}
+
+/* Контакты */
+.radio-form {
+    display: flex;
+    gap: 15px;
+}
+
+.typewriter {
+    width: 100%;
+    padding: 12px;
+    background: #1A1A1A;
+    border: 1px solid #39FF14;
+    color: #39FF14;
+    font-family: 'OCR-A', monospace;
+    animation: blink 0.5s infinite;
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+.send-lever {
+    padding: 12px 25px;
+    background: #B87333;
+    border: none;
+    color: #1A1A1A;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.2s;
+}
+
+.send-lever::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: steam-puff 0.5s infinite;
+    opacity: 0;
+}
+
+.send-lever:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 10px #39FF14;
+}
+
+.send-lever:active::after {
+    opacity: 1;
+}
+
+@keyframes steam-puff {
+    0% { transform: translateX(-50%) translateY(0); opacity: 1; }
+    100% { transform: translateX(-50%) translateY(-20px); opacity: 0; }
+}
+
+.socials {
+    margin-top: 25px;
+    display: flex;
+    gap: 25px;
+}
+
+.social-icon {
+    width: 50px;
+    height: 50px;
+    background: #B87333;
+    border-radius: 50%;
+    position: relative;
+}
+
+.social-icon:hover {
+    box-shadow: 0 0 15px #39FF14;
+}
+
+.social-icon::after {
+    content: attr(data-social);
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #000;
+    padding: 5px;
+    color: #39FF14;
+    font-size: 0.8em;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.social-icon:hover::after {
+    opacity: 1;
+}
+
+/* Пасхалка */
+.reactor-gear {
+    width: 60px;
+    height: 60px;
+    background: url('/2.png'); /* Укажи имя своего файла */
+    background-size: contain; /* Чтобы изображение помещалось в размеры */
+    background-repeat: no-repeat; /* Предотвращает повторение */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    animation: spin 2s infinite linear;
+}
+
+.mini-game {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    background: #000;
+    border: 2px solid #39FF14;
+    box-shadow: 0 0 20px #39FF14;
+}
+
+#game-canvas {
+    width: 300px;
+    height: 200px;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+
+
+.planet {
+    position: fixed;
+    top: 70%;
+    right: 10%;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, #2a4066 20%, #1a2a44 50%, transparent 80%);
+    box-shadow: 0 0 30px rgba(42, 64, 102, 0.8), inset 0 0 10px rgba(255, 255, 255, 0.2);
+    z-index: 10;
+    border-radius: 50%;
+    animation: planet-spin 30s infinite linear;
+    overflow: visible;
+}
+
+/* Спутники с разными размерами */
+.satellite {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 9;
+}
+
+#sat1 {
+    width: 15px;  /* Меньший спутник */
+    height: 15px;
+    background: radial-gradient(circle, #c79696 40%, #a9a9a9 80%);
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: orbit1 2s infinite linear; /* Быстрее вращается (5 секунд) */
+}
+
+#sat2 {
+    width: 25px;  /* Больший спутник */
+    height: 25px;
+    background: radial-gradient(circle, #778fbd 40%, #c0c0c0 80%);
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: orbit2 35s infinite linear; /* Медленнее вращается (15 секунд) */
+}
+
+/* Анимация вращения планеты */
+@keyframes planet-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Орбита первого спутника */
+@keyframes orbit1 {
+    0% { transform: translate(-50%, -50%) translateX(80px) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) translateX(80px) rotate(360deg); }
+}
+
+/* Орбита второго спутника */
+@keyframes orbit2 {
+    0% { transform: translate(-50%, -50%) translateX(120px) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) translateX(120px) rotate(-360deg); }
+}
+
+/* Локальное искривление для .alien-saucer */
+.alien-saucer {
+    position: fixed;
+    width: 80px;
+    height: 40px;
+    background: url('/delorean.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: saucer-flight 25s infinite ease-in-out;
+    z-index: 0;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Курсор с эффектом "всасывания" */
+.cursor-distort {
+    position: fixed;
+    width: 25px;
+    height: 25px;
+    background: radial-gradient(circle, rgba(42, 64, 102, 0.7), transparent); /* Цвет планеты */
+    border-radius: 50%;
+    z-index: 1001;
+    pointer-events: none;
+    animation: suck-in 0.5s infinite alternate;
+    filter: blur(3px);
+}
+
+.cursor-trail {
+    position: fixed;
+    width: 15px;
+    height: 15px;
+    background: rgba(42, 64, 102, 0.4);
+    border-radius: 50%;
+    z-index: 1000;
+    pointer-events: none;
+    animation: fade-out 0.5s forwards;
+}
+
+@keyframes suck-in {
+    0% { transform: scale(1) translate(0, 0); }
+    100% { transform: scale(0.5) translate(-10px, 10px); } /* "Всасывание" к планете */
+}
+
+@keyframes fade-out {
+    0% { opacity: 0.4; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.5); }
+}

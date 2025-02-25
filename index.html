@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Космическая Визитка</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=OCR-A&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="space-background"></div>
+    <div class="stars-layer1"></div>
+    <div class="stars-layer2"></div>
+    <div class="nebula"></div>
+    <div class="meteor" id="meteor1"></div>
+    <div class="meteor" id="meteor2"></div>
+    <div class="planet" id="planet">
+      <div class="satellite" id="sat1"></div>
+      <div class="satellite" id="sat2"></div>
+    </div>
+    <div class="alien-saucer" id="alien-saucer">
+      <img src="/4.png" alt="" />
+    </div>
+    <div class="crt-overlay"></div>
+    <div class="steam steam1"></div>
+    <div class="steam steam2"></div>
+    <div class="container">
+      <!-- Космический корабль -->
+      <div class="spaceship" id="spaceship">
+        <img src="/3.png" alt="" />
+      </div>
+
+      <!-- Главная страница -->
+      <header class="launch-panel">
+        <div class="screen" id="main-screen">
+          <h1>
+            <span class="glitch" data-text="[FRONTEND DEV]"
+              >[FRONTEND DEV]</span
+            >
+            <span class="glitch" data-text="[Емельянова Джессика]"
+              >[Емельянова Джессика]</span
+            >
+            <span class="glitch" data-text="[JessiLis]">[JessiLis]</span>
+          </h1>
+          <canvas id="threejs-canvas"></canvas>
+          <div class="code-lines" id="code-lines"></div>
+          <div class="space-cat" id="cat1"></div>
+        </div>
+      </header>
+
+      <!-- Обо мне -->
+      <section class="about">
+        <h2 class="glitch" data-text="Капсула пилота">Капсула пилота</h2>
+        <div class="pilot-card">
+          <div class="scan-line"></div>
+          <img src="/1.png" alt="Аватар" class="avatar glitch-avatar" />
+          <button class="data-btn">Развернуть досье</button>
+          <div class="data-panel">
+            <div class="bio-text">
+              <p class="intro glitch-line" data-text="Привет!✨ Я Джессика">
+                Привет!✨ Я Джессика
+              </p>
+              <p>Бывший юрист, который променял Кодекс РФ на JavaScript!</p>
+              <p>
+                Моя история — это когда внутренний голос победил родительское
+                "надо",
+              </p>
+              <p>
+                а любовь к аниме и готике намекала на творческую душу задолго до
+                первой строчки кода.
+              </p>
+              <p>
+                После короткого забега в МВД (спойлер: это было эпично неудачное
+                свидание с системой 😅)
+              </p>
+              <p>я нырнула в мир IT.</p>
+              <p>
+                Начала с тестирования, думая, что моя суперспособность ломать
+                всё, до чего дотянусь, наконец-то пригодится!
+              </p>
+              <p>
+                Но судьба сыграла со мной шутку — вместо поиска багов я
+                влюбилась в написание автотестов
+              </p>
+              <p>и поняла: моё призвание — создавать, а не разрушать.</p>
+              <p class="highlight">Сейчас я frontend-разработчик,</p>
+              <p class="highlight">
+                и каждая строчка кода для меня — это маленькое произведение
+                искусства.
+              </p>
+              <p>За плечами две стажировки и один проект с нуля до MVP.</p>
+              <p>
+                Обожаю видеоигры, слежу за космическими новостями и балуюсь с
+                нейросетями.
+              </p>
+              <p>Мечтаю найти команду, где смогу сочетать код с креативом</p>
+              <p>и создавать интерфейсы, от которых захватывает дух.</p>
+              <p class="call-to-action">
+                Если у вас есть место для разработчика,
+              </p>
+              <p class="call-to-action">
+                который может как написать чистый код, так и случайно уронить
+                прод
+              </p>
+              <p class="call-to-action">
+                (но только по предварительной записи 😉),
+              </p>
+              <p class="call-to-action">то я та, кого вы ищете!</p>
+              <p
+                class="final glitch-line"
+                data-text="Давайте творить будущее вместе! 🚀"
+              >
+                Давайте творить будущее вместе! 🚀
+              </p>
+            </div>
+            <div class="steam-effect"></div>
+            <div class="space-cat" id="cat2"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Навыки -->
+      <section class="skills">
+        <h2 class="glitch" data-text="Арсенал технологий">
+          Арсенал технологий
+        </h2>
+        <div class="control-panel">
+          <div class="skill-lever">
+            <input
+              type="range"
+              min="0"
+              max="100"
+              value="50"
+              data-skill="HTML"
+            />
+            <span>HTML</span>
+          </div>
+          <div class="skill-lever">
+            <input type="range" min="0" max="100" value="50" data-skill="CSS" />
+            <span>CSS</span>
+          </div>
+          <div class="skill-lever">
+            <input
+              type="range"
+              min="0"
+              max="100"
+              value="50"
+              data-skill="JavaScript"
+            />
+            <span>JS</span>
+          </div>
+          <div class="skill-sphere" data-skill="React">React</div>
+          <div class="skill-sphere" data-skill="Vue">Vue</div>
+          <div class="skill-button" data-skill="Git">Git</div>
+          <div class="skill-button" data-skill="Webpack">Webpack</div>
+          <div class="skill-button" data-skill="TypeScript">TS</div>
+        </div>
+        <div class="tech-card" id="tech-card"></div>
+      </section>
+
+      <!-- Опыт работы -->
+      <section class="experience">
+        <h2 class="glitch" data-text="Лог полётов">Лог полётов</h2>
+        <div class="exp-timeline">
+          <div class="exp-item" data-exp="1">
+            <h3>Tiddle App</h3>
+            <p>2024 по настоящее время: Фронтенд-разработчик(React)</p>
+          </div>
+          <div class="exp-item" data-exp="2">
+            <h3>ООО "Экосистема Альфа"</h3>
+            <p>2024-2025: Фронтенд-разработчик(React)</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Портфолио -->
+      <section class="portfolio">
+        <h2 class="glitch" data-text="Космические миссии">
+          Космические миссии
+        </h2>
+        <div class="orbit">
+          <canvas id="portfolio-canvas"></canvas>
+          <div class="project-details" id="project-details"></div>
+          <div class="space-cat" id="cat3"></div>
+        </div>
+      </section>
+
+      <!-- Контакты -->
+      <section class="contacts">
+        <h2 class="glitch" data-text="Радиовышка">Радиовышка</h2>
+        <form class="radio-form">
+          <input
+            type="text"
+            placeholder="Передайте сигнал..."
+            class="input-field typewriter"
+          />
+          <button type="submit" class="send-lever">Запустить</button>
+        </form>
+        <div class="socials">
+          <a href="#" class="social-icon" data-social="Twitter"></a>
+          <a href="#" class="social-icon" data-social="GitHub"></a>
+          <a href="#" class="social-icon" data-social="LinkedIn"></a>
+        </div>
+      </section>
+
+      <!-- Пасхалка -->
+      <div class="reactor-gear" id="secret-gear"></div>
+      <div class="mini-game" id="mini-game">
+        <p>Управляй кораблём! (Стрелки)</p>
+        <canvas id="game-canvas"></canvas>
+      </div>
+    </div>
+    <audio
+      id="click-sound"
+      src="https://www.myinstants.com/media/sounds/click.mp3"
+    ></audio>
+    <audio
+      id="steam-sound"
+      src="https://www.myinstants.com/media/sounds/steam-hiss.mp3"
+    ></audio>
+    <audio
+      id="radar-sound"
+      src="https://www.myinstants.com/media/sounds/radar.mp3"
+    ></audio>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
