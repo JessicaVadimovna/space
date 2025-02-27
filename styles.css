@@ -149,7 +149,7 @@ body {
     position: fixed;
     width: 80px;
     height: 40px;
-    background: url('/delorean.png');
+    background: url('/assets/img/delorean.png');
     background-size: contain;
     background-repeat: no-repeat;
     animation: saucer-flight 25s infinite ease-in-out;
@@ -202,7 +202,7 @@ body {
     position: fixed;
     width: 80px;
     height: 40px;
-    background: url('/delorean.png'); /* Укажи имя своего файла */
+    background: url('/assets/img/delorean.png'); /* Укажи имя своего файла */
     background-size: contain; /* Чтобы изображение помещалось в размеры */
     background-repeat: no-repeat; /* Предотвращает повторение */
     animation: saucer-flight 25s infinite ease-in-out;
@@ -288,7 +288,7 @@ body {
     position: fixed;
     width: 100px;
     height: 50px;
-    background: url('/sputnik.png'); /* Укажи имя своего файла */
+    background: url('/assets/img/sputnik.png'); /* Укажи имя своего файла */
     background-size: contain;
     background-repeat: no-repeat;
     animation: fly 20s infinite linear;
@@ -419,7 +419,7 @@ body {
     position: absolute;
     width: 80px;
     height: 80px;
-    background: url('/heart.png'); /* Укажи имя своего файла */
+    background: url('/assets/img/heart.png'); /* Укажи имя своего файла */
     background-size: contain; /* Чтобы изображение помещалось в размеры */
     background-repeat: no-repeat; /* Предотвращает повторение */
     animation: float 6s infinite ease-in-out;
@@ -763,7 +763,7 @@ body {
 .reactor-gear {
     width: 60px;
     height: 60px;
-    background: url('/2.png'); /* Укажи имя своего файла */
+    background: url('/assets/img/2.png'); /* Укажи имя своего файла */
     background-size: contain; /* Чтобы изображение помещалось в размеры */
     background-repeat: no-repeat; /* Предотвращает повторение */
     position: fixed;
@@ -860,7 +860,7 @@ body {
     position: fixed;
     width: 80px;
     height: 40px;
-    background: url('/delorean.png');
+    background: url('/assets/img/delorean.png');
     background-size: contain;
     background-repeat: no-repeat;
     animation: saucer-flight 25s infinite ease-in-out;
