@@ -246,7 +246,7 @@ body {
     position: fixed;
     width: 100px;
     height: 50px;
-    background: url('/assets/img/sputnik.png');
+    background: url('./assets/img/sputnik.png');
     background-size: contain;
     background-repeat: no-repeat;
     animation: fly 20s infinite linear;
@@ -264,7 +264,7 @@ body {
     position: fixed;
     width: 80px;
     height: 40px;
-    background: url('/assets/img/delorean.png');
+    background: url('./assets/img/delorean.png');
     background-size: contain;
     background-repeat: no-repeat;
     animation: saucer-flight 25s infinite ease-in-out;
@@ -436,7 +436,7 @@ body {
     position: absolute;
     width: 80px;
     height: 80px;
-    background: url('/assets/img/heart.png');
+    background: url('./assets/img/heart.png');
     background-size: contain;
     background-repeat: no-repeat;
     animation: float 6s infinite ease-in-out;
@@ -947,7 +947,7 @@ body {
 .reactor-gear {
     width: 60px;
     height: 60px;
-    background: url('/assets/img/2.png');
+    background: url('./assets/img/2.png');
     background-size: contain;
     background-repeat: no-repeat;
     position: fixed;
