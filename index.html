@@ -15,8 +15,6 @@
     <div class="stars-layer1"></div>
     <div class="stars-layer2"></div>
     <div class="nebula"></div>
-    <div class="meteor" id="meteor1"></div>
-    <div class="meteor" id="meteor2"></div>
     <div class="planet" id="planet">
       <div class="satellite" id="sat1"></div>
       <div class="satellite" id="sat2"></div>
@@ -27,6 +25,10 @@
     <div class="crt-overlay"></div>
     <div class="steam steam1"></div>
     <div class="steam steam2"></div>
+
+    <!-- Радар -->
+    <div class="radar" id="radar"></div>
+
     <div class="container">
       <!-- Космический корабль -->
       <div class="spaceship" id="spaceship">
@@ -61,7 +63,28 @@
             alt="Аватар"
             class="avatar glitch-avatar"
           />
+
+          <!-- Жизненные показатели -->
+          <div class="vital-signs">
+            <div class="vital-bar" data-label="Креативность">
+              <div class="vital-fill" style="width: 90%"></div>
+            </div>
+            <div class="vital-bar" data-label="Скорость кодирования">
+              <div class="vital-fill" style="width: 75%"></div>
+            </div>
+            <div class="vital-bar" data-label="Устойчивость к багам">
+              <div class="vital-fill" style="width: 85%"></div>
+            </div>
+          </div>
+
+          <!-- Индикатор мастерства -->
+          <div class="mastery-indicator">
+            <div class="mastery-ring"></div>
+            <span class="mastery-text">Frontend Mastery</span>
+          </div>
+
           <button class="data-btn">Развернуть досье</button>
+
           <div class="data-panel">
             <div class="bio-text">
               <p class="intro glitch-line" data-text="Привет!✨ Я Джессика">
@@ -120,6 +143,25 @@
                 Давайте творить будущее вместе! 🚀
               </p>
             </div>
+            <!-- Космическая статистика -->
+            <div class="stats-panel">
+              <h3 class="glitch" data-text="Космическая статистика">
+                Космическая статистика
+              </h3>
+              <ul>
+                <li>Пройдено миссий: 2 стажировки</li>
+                <li>Создано систем: 1 MVP</li>
+                <li>Часы в космосе: 1000+ часов кода</li>
+              </ul>
+            </div>
+
+            <!-- Результаты тестов -->
+            <div class="psycho-panel">
+              <h3 class="glitch" data-text="Кто я?">Кто я?</h3>
+              <p>Тип личности: INTP</p>
+              <p>Стиль работы: Архитектор кода</p>
+              <p>Суперсила: Превращение багов в фичи</p>
+            </div>
             <div class="steam-effect"></div>
             <div class="space-cat" id="cat2"></div>
           </div>
@@ -132,50 +174,52 @@
           Арсенал технологий
         </h2>
         <div class="control-panel">
-          <div class="skill-lever">
-            <input
-              type="range"
-              min="0"
-              max="100"
-              value="50"
-              data-skill="HTML"
-            />
-            <span>HTML</span>
-          </div>
-          <div class="skill-lever">
-            <input type="range" min="0" max="100" value="50" data-skill="CSS" />
-            <span>CSS</span>
-          </div>
-          <div class="skill-lever">
-            <input
-              type="range"
-              min="0"
-              max="100"
-              value="50"
-              data-skill="JavaScript"
-            />
-            <span>JS</span>
-          </div>
-          <div class="skill-sphere" data-skill="React">React</div>
-          <div class="skill-sphere" data-skill="Vue">Vue</div>
-          <div class="skill-button" data-skill="Git">Git</div>
-          <div class="skill-button" data-skill="Webpack">Webpack</div>
-          <div class="skill-button" data-skill="TypeScript">TS</div>
+          <div class="skill-item" data-skill="HTML">HTML</div>
+          <div class="skill-item" data-skill="CSS">CSS</div>
+          <div class="skill-item" data-skill="JavaScript">JS</div>
+          <div class="skill-item" data-skill="React">React</div>
+          <div class="skill-item" data-skill="Vue">Vue</div>
+          <div class="skill-item" data-skill="Git">Git</div>
+          <div class="skill-item" data-skill="Webpack">Webpack</div>
+          <div class="skill-item" data-skill="TypeScript">TS</div>
         </div>
-        <div class="tech-card" id="tech-card"></div>
       </section>
 
-      <!-- Опыт работы -->
-      <section class="experience">
-        <h2 class="glitch" data-text="Лог полётов">Лог полётов</h2>
+      <!-- Языки -->
+      <section class="languages">
+        <h2 class="glitch" data-text="Коды общения">Коды общения</h2>
+        <div class="language-panel">
+          <div class="skill-item" data-skill="Русский">
+            <span class="language-name">Русский</span>
+            <span class="language-level">Родной</span>
+          </div>
+          <div class="skill-item" data-skill="English">
+            <span class="language-name">English</span>
+            <span class="language-level">B2</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Опыт работы (Лог полётов) -->
+      <section class="window">
+        <div class="window-header">
+          <span class="window-title glitch" data-text="Лог полётов"
+            >Лог полётов</span
+          >
+          <div class="window-controls">
+            <span class="minimize">-</span>
+            <span class="maximize">□</span>
+            <span class="close">X</span>
+          </div>
+        </div>
         <div class="exp-timeline">
           <div class="exp-item" data-exp="1">
             <h3>Tiddle App</h3>
-            <p>2024 по настоящее время: Фронтенд-разработчик(React)</p>
+            <p>2024 по настоящее время: Фронтенд-разработчик (React, TS)</p>
           </div>
           <div class="exp-item" data-exp="2">
             <h3>ООО "Экосистема Альфа"</h3>
-            <p>2024-2025: Фронтенд-разработчик(React)</p>
+            <p>2024-2025: Фронтенд-разработчик (React)</p>
           </div>
         </div>
       </section>
@@ -210,6 +254,18 @@
         </div>
       </section>
 
+      <!-- Хобби -->
+      <section class="hobbies">
+        <h2 class="glitch" data-text="Космические увлечения">
+          Космические увлечения
+        </h2>
+        <div class="hobby-panel">
+          <div class="skill-item" data-skill="#Видеоигры">#Видеоигры</div>
+          <div class="skill-item" data-skill="#Космология">#Космология</div>
+          <div class="skill-item" data-skill="#Нейросети">#Нейросети</div>
+        </div>
+      </section>
+
       <!-- Пасхалка -->
       <div class="reactor-gear" id="secret-gear"></div>
       <div class="mini-game" id="mini-game">
@@ -217,6 +273,7 @@
         <canvas id="game-canvas"></canvas>
       </div>
     </div>
+
     <audio
       id="click-sound"
       src="https://www.myinstants.com/media/sounds/click.mp3"
