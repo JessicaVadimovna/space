@@ -469,6 +469,11 @@ body {
     box-shadow: 0 0 15px #39FF14;
 }
 
+.link-personality {
+    text-decoration: none;
+    color: #39FF14;
+}
+
 .scan-line {
     position: absolute;
     top: 0;
